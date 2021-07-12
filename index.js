@@ -23,7 +23,7 @@ client.connect(err => {
         })
     })
 
-    app.get('/getBlogs', (req, res) => {
+    app.get("/getBlogs", (req, res) => {
         blogPostCollection.find()
         .toArray((err, data) => {
             res.send(data);
@@ -38,4 +38,4 @@ app.get('/', (req, res) => {
   res.send('Hello World! this is my PHero test Task')
 })
 
-app.listen(5050)
+app.listen(process.env.PORT ||5050)
